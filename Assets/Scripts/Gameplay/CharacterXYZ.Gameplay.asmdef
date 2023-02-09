@@ -1,0 +1,16 @@
+{
+    "name": "CharacterXYZ.Gameplay",
+    "rootNamespace": "CharacterXYZ.Gameplay",
+    "references": [
+        "GUID:3f813859bdfe29f46bfe1afe0e598cf9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

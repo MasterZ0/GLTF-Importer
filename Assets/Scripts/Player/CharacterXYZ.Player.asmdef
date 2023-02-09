@@ -1,0 +1,22 @@
+{
+    "name": "CharacterXYZ.Player",
+    "rootNamespace": "CharacterXYZ.Player",
+    "references": [
+        "GUID:7f7d1af65c2641843945d409d28f2e20",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:8d34520361baee14aa1194267e83a495",
+        "GUID:88acd8245b5b32a4487d3994bba3e0e3",
+        "GUID:68fa763f373eb8943bd3f52e2928bdb4",
+        "GUID:65c3704d72a14fd409ae6284761d3f92",
+        "GUID:3f813859bdfe29f46bfe1afe0e598cf9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

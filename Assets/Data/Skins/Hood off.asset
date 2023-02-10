@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb184327d77da34c8fde9be57af4a1b, type: 3}
+  m_Name: Hood off
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: animations
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: idle
+    - Name: $v
+      Entry: 1
+      Data: https://firebasestorage.googleapis.com/v0/b/characterxyz-production.appspot.com/o/characters%2FBasic_tamashi%2Fanimations%2Ftamashi%40idle.glb?alt=media&token=45c48271-8b11-4246-a69f-b3092951536c
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: walkfwd
+    - Name: $v
+      Entry: 1
+      Data: https://firebasestorage.googleapis.com/v0/b/characterxyz-production.appspot.com/o/characters%2FBasic_tamashi%2Fanimations%2Ftamashi%40walkfwd.glb?alt=media&token=ea815f06-cff6-47f2-82ae-968459868d88
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: runfwd
+    - Name: $v
+      Entry: 1
+      Data: https://firebasestorage.googleapis.com/v0/b/characterxyz-production.appspot.com/o/characters%2FBasic_tamashi%2Fanimations%2Ftamashi%40runfwd.glb?alt=media&token=81618da5-c862-4ac1-b4d5-b34af8b45458
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: jumpstart
+    - Name: $v
+      Entry: 1
+      Data: https://firebasestorage.googleapis.com/v0/b/characterxyz-production.appspot.com/o/characters%2FBasic_tamashi%2Fanimations%2Ftamashi%40jumpstart.glb?alt=media&token=a636df3a-22d2-4b64-b58a-b62dde9aee0d
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: jumpinair
+    - Name: $v
+      Entry: 1
+      Data: https://firebasestorage.googleapis.com/v0/b/characterxyz-production.appspot.com/o/characters%2FBasic_tamashi%2Fanimations%2Ftamashi%40jumpinair.glb?alt=media&token=aa82191e-79f6-4522-9d99-cc41921d9121
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: jumpend
+    - Name: $v
+      Entry: 1
+      Data: https://firebasestorage.googleapis.com/v0/b/characterxyz-production.appspot.com/o/characters%2FBasic_tamashi%2Fanimations%2Ftamashi%40jumpend.glb?alt=media&token=994751c6-02ba-4734-a311-afd3f720561d
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  mesh: https://firebasestorage.googleapis.com/v0/b/characterxyz-production.appspot.com/o/characters%2FBasic_tamashi%2Fhood_off%2Fskinnedmesh.glb?alt=media&token=5d9e8571-5c79-4798-97d4-0021c7f197b5

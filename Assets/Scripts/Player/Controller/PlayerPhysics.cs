@@ -11,9 +11,6 @@ namespace CharacterXYZ.Player
     {
         [Header("Layers")]
         [SerializeField] private LayerMask groundLayer;
-        [SerializeField] private LayerMask interactableLayer;
-        [SerializeField] private LayerMask playerLayer;
-        [SerializeField] private LayerMask invisibleLayer;
 
         [Header("Components")]
         [SerializeField] private CharacterController characterController;

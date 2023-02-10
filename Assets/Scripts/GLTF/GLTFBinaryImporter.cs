@@ -8,7 +8,7 @@ using GLTFast;
 using Sirenix.OdinInspector;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEngine.TextCore.Text;
+using System.Reflection;
 
 namespace CharacterXYZ.GLTF
 {
@@ -16,7 +16,9 @@ namespace CharacterXYZ.GLTF
     {
         [Title("GLPImporter")]
         [SerializeField] private string baseUrl = "https://us-central1-charaktor-933a4.cloudfunctions.net/server/api/integration-test";
-        [SerializeField] private string accessKey = "cxyz-tamashi-hoodoff";
+        [SerializeField] private string accessKey = "access_key";
+        [SerializeField] private string accessValue = "cxyz-tamashi-hoodoff";
+        [SerializeField] private List<int> okCode = new List<int>() { 200, 302 };
 
         [Title("Components")]
         [SerializeField] private Animator animator;
@@ -25,6 +27,11 @@ namespace CharacterXYZ.GLTF
         [Title("Skins")]
         [SerializeField] private CharacterInfoData hoodOn;
         [SerializeField] private CharacterInfoData hoodOff;
+
+        private ImportSettings ImportSettings => new()
+        {
+            AnimationMethod = AnimationMethod.Mecanim,
+        };
 
         private bool isDownloading;
 
@@ -45,6 +52,9 @@ namespace CharacterXYZ.GLTF
                 mesh = new MeshData() { glb = skin.mesh },
                 animations = skin.animations
             };
+
+            if (isDownloading)
+                return;
 
             UniTask.Create(() => LoadCharacterSkin(character));
         }
@@ -74,11 +84,11 @@ namespace CharacterXYZ.GLTF
                 LoadCharacterData(hoodOff);
             }
 
-            accessKey = GUI.TextField(rectTextField, accessKey, 25);
+            accessValue = GUI.TextField(rectTextField, accessValue, 25);
 
             if (GUI.Button(rectFetch, "Fetch"))
             {
-                Fetch(accessKey);
+                Fetch(accessValue);
             }
         }
         #endregion
@@ -95,7 +105,7 @@ namespace CharacterXYZ.GLTF
             ApiResult<CharacterData> userDataResult = await RequestT<CharacterData>(request);
 
             // Update skin
-            if (userDataResult.Successful)
+            if (userDataResult.Successful && okCode.Contains(userDataResult.Value.status))
             {
                 await LoadCharacterSkin(userDataResult.Value.response);
             }
@@ -105,9 +115,6 @@ namespace CharacterXYZ.GLTF
 
         private async UniTask LoadCharacterSkin(CharacterInfo characterInfo)
         {
-            if (isDownloading)
-                return;
-
             isDownloading = true;
 
             // Create a new instance of Override Controller
@@ -121,7 +128,7 @@ namespace CharacterXYZ.GLTF
 
                 // Load animation
                 GltfImport gltfAnimation = new();
-                bool success = await gltfAnimation.LoadGltfBinary(response);
+                bool success = await gltfAnimation.LoadGltfBinary(response, importSettings: ImportSettings);
 
                 if (!success)
                     return;
@@ -132,8 +139,7 @@ namespace CharacterXYZ.GLTF
                 if (clips == null)
                     return;
 
-                // Set new animation
-                clips[0].legacy = false;
+                clips[0].wrapMode = WrapMode.Loop;
                 animatorOverrideController[pair.Key] = clips[0];
             });
 

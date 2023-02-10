@@ -108,8 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ec856257fd3f240a70bd9e791331c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUrl: https://us-central1-charaktor-933a4.cloudfunctions.net/server/api/integration-test
-  accessKey: cxyz-tamashi-hoodoff
+  baseUrl: https://us-central1-characterxyz-production.cloudfunctions.net/server/api/integration-test
+  accessKey: access_key
+  accessValue: cxyz-tamashi-hoodoff
+  okCode: c80000002e010000
   animator: {fileID: 5796412908487752812}
   animatorBase: {fileID: 9100000, guid: 184b32227e4496646a331d5e2c3a4d06, type: 2}
   hoodOn: {fileID: 11400000, guid: 5e52b97068139c442a135a82241d057d, type: 2}

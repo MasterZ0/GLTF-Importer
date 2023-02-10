@@ -10,7 +10,6 @@ using UnityEngine.Networking;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using GLTFast.Schema;
 using System.Linq;
 using CharacterXYZ.GLTF;
 
@@ -21,6 +20,12 @@ namespace CharacterXYZ.Editor
         public string savePath = "Assets/";
 
         private const string WindowName = "GLTF Asset Importer";
+
+        private ImportSettings ImportSettings => new()
+        {
+            AnimationMethod = AnimationMethod.Mecanim,
+            GenerateMipMaps = true,
+        };
 
         [MenuItem("Character XYZ/" + WindowName)]
         public static void ShowWindow()
@@ -50,7 +55,7 @@ namespace CharacterXYZ.Editor
 
                 // Load the animation data
                 GltfImport gltfAnimation = new GltfImport(null, defaultDeferAgent);
-                bool success = await gltfAnimation.LoadGltfBinary(response);
+                bool success = await gltfAnimation.LoadGltfBinary(response, importSettings: ImportSettings);
 
                 if (!success)
                     return;
@@ -89,7 +94,7 @@ namespace CharacterXYZ.Editor
 
         private void SaveModel(byte[] data, GltfImport gltf)
         {
-            string path = savePath + gltf.GetSourceRoot().skins[0].name + ".glb";
+            string path = gltf.GetSourceRoot().skins[0].name + ".glb";
             File.WriteAllBytes(Application.dataPath + "/" + path, data);
             AssetDatabase.ImportAsset(path);
         }
@@ -103,7 +108,6 @@ namespace CharacterXYZ.Editor
 
             foreach (AnimationClip clip in clips)
             {
-                clip.legacy = false;
                 AssetDatabase.CreateAsset(clip, savePath + animationName + ".anim");
             }
         }

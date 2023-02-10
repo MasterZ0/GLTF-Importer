@@ -48,7 +48,13 @@ namespace CharacterXYZ.API
             }
         }
 
-        private ApiResult(string text, byte[] data, bool successful, int statusHTTP, string error) : base(text, data, successful, statusHTTP, error) { }
+        private ApiResult(string text, byte[] data, bool successful, int statusHTTP, string error) : base(text, data, successful, statusHTTP, error)
+        {
+            if (Successful && StatusHTTP == OkCode)
+            {
+                Value = JsonConvert.DeserializeObject<T>(text);
+            }
+        }
 
         public static ApiResult<T> TConvert(ApiResult apiResult)
         {

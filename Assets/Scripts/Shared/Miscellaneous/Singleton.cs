@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CharacterXYZ.Shared
+namespace GLTFImporter.Shared
 {
     /// <summary>
     /// Temporary

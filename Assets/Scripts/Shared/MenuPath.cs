@@ -1,4 +1,4 @@
-namespace CharacterXYZ.Shared
+namespace GLTFImporter.Shared
 {
     public class MenuPath 
     {

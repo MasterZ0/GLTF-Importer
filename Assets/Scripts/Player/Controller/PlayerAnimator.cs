@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-namespace CharacterXYZ.Player
+namespace GLTFImporter.Player
 {
     [Serializable]
     public sealed class PlayerAnimator : PlayerControllerComponent
     {
         [Header("Player Animator")]
-        [SerializeField] private Animator animator;
+        [SerializeField] private Animation animation;
 
         [Header("States")]
         [SerializeField] private string idleState = "Idle";
@@ -17,36 +17,12 @@ namespace CharacterXYZ.Player
         [SerializeField] private string fallingState = "Falling";
         [SerializeField] private string landingState = "Landing";
 
-        [Header("Parameters")]
-        [SerializeField] private string velocityXParameter = "VelocityX";
-        [SerializeField] private string velocityZParameter = "VelocityZ";
-
         private string idleOverride;
 
-        private float velocityX;
-        private float velocityZ;
-        private float maxVelocityScale;
-
-        internal void Update()
+        internal void ChangeAnimation(Animation newAnimation)
         {
-            // Convert velocity
-            Vector3 worldVelocity = Controller.Physics.Velocity;
-            Vector3 localVelocity = Controller.Physics.Transform.InverseTransformDirection(worldVelocity);
-
-            // Avoid division by 0
-            float maxScale = maxVelocityScale == 0 ? 1 : maxVelocityScale; 
-            Vector3 velocityScale = localVelocity / maxScale;
-
-            // Apply smooth
-            velocityX = Mathf.MoveTowards(velocityX, velocityScale.x, 1f / Data.AnimationBlendDamp * Time.fixedDeltaTime);
-            velocityZ = Mathf.MoveTowards(velocityZ, velocityScale.z, 1f / Data.AnimationBlendDamp * Time.fixedDeltaTime);
-
-            // Round value
-            float x = Mathf.Round(velocityX * 10f) / 10f;
-            float z = Mathf.Round(velocityZ * 10f) / 10f;
-
-            SetFloat(velocityXParameter, x);
-            SetFloat(velocityZParameter, z);
+            animation = newAnimation;
+            Play(idleState);
         }
 
         internal void Idle()
@@ -66,11 +42,9 @@ namespace CharacterXYZ.Player
         internal void Walk() => Play(walkState);
         internal void Run() => Play(runState);
 
-        private void Play(string stateName, float transition = 0.25f, int layerIndex = 0)
+        private void Play(string stateName, float transition = 0.25f)
         {
-            animator.CrossFadeInFixedTime(stateName, transition, layerIndex);
+            animation.CrossFade(stateName, transition);
         }
-
-        private void SetFloat(string parameter, float value) => animator.SetFloat(parameter, value);
     }
 }

@@ -1,4 +1,4 @@
-namespace CharacterXYZ.Inputs
+namespace GLTFImporter.Inputs
 {
     public abstract class BaseInput
     {

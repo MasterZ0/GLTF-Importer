@@ -1,6 +1,6 @@
-﻿using CharacterXYZ.Data;
+﻿using GLTFImporter.Data;
 
-namespace CharacterXYZ.Player
+namespace GLTFImporter.Player
 {
     public abstract class PlayerControllerComponent
     { 

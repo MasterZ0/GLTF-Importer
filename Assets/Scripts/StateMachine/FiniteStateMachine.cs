@@ -3,7 +3,7 @@ using System;
 using System.Reflection;
 using System.Linq;
 
-namespace CharacterXYZ.StateMachine
+namespace GLTFImporter.StateMachine
 {
     public class FiniteStateMachine
     {

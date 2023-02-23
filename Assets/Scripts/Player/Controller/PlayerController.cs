@@ -1,9 +1,9 @@
 using UnityEngine;
-using CharacterXYZ.Player.FSM;
-using CharacterXYZ.Inputs;
-using CharacterXYZ.Data;
+using GLTFImporter.Player.FSM;
+using GLTFImporter.Inputs;
+using GLTFImporter.Data;
 
-namespace CharacterXYZ.Player
+namespace GLTFImporter.Player
 {
     public sealed class PlayerController : MonoBehaviour
     {
@@ -37,12 +37,16 @@ namespace CharacterXYZ.Player
             playerInputs.Dispose();
         }
 
+        public void OnChangeAnimation(Animation animation)
+        {
+            playerAnimator.ChangeAnimation(animation);
+        }
+
         private void FixedUpdate()
         {
             stateMachine.Update();
             playerPhysics.Update();
             playerCamera.Update();
-            playerAnimator.Update();
         }
 
         private void OnDrawGizmosSelected()

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine.Networking;
 
-namespace CharacterXYZ.API
+namespace GLTFImporter.API
 {
     public struct RequestHeader
     {

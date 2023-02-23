@@ -1,8 +1,8 @@
-﻿using CharacterXYZ.Gameplay;
+﻿using GLTFImporter.Gameplay;
 using System;
 using UnityEngine;
 
-namespace CharacterXYZ.Player
+namespace GLTFImporter.Player
 {
     [Serializable]
     public class PlayerCamera : PlayerControllerComponent

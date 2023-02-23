@@ -1,8 +1,8 @@
-﻿using CharacterXYZ.Data;
-using CharacterXYZ.Inputs;
-using CharacterXYZ.StateMachine;
+﻿using GLTFImporter.Data;
+using GLTFImporter.Inputs;
+using GLTFImporter.StateMachine;
 
-namespace CharacterXYZ.Player.FSM
+namespace GLTFImporter.Player.FSM
 {
     public abstract class PlayerState : State<PlayerFSM>
     {

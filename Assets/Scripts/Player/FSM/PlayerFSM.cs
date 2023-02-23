@@ -1,7 +1,7 @@
-﻿using CharacterXYZ.StateMachine;
+﻿using GLTFImporter.StateMachine;
 using UnityEngine;
 
-namespace CharacterXYZ.Player.FSM
+namespace GLTFImporter.Player.FSM
 {
     public class PlayerFSM : FiniteStateMachine
     {

@@ -1,7 +1,7 @@
 ﻿using GLTFast;
 using System.Threading.Tasks;
 
-namespace CharacterXYZ.Editor
+namespace GLTFImporter.Editor
 {
     public class EditorDeferAgent : IDeferAgent
     {

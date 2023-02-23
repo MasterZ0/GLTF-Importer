@@ -1,7 +1,7 @@
-﻿using CharacterXYZ.Shared;
+﻿using GLTFImporter.Shared;
 using UnityEngine;
 
-namespace CharacterXYZ.Data
+namespace GLTFImporter.Data
 {
 
     [CreateAssetMenu(menuName = MenuPath.Data + "Player", fileName = "New" + nameof(PlayerData))]
@@ -9,7 +9,6 @@ namespace CharacterXYZ.Data
     {
         [Header("Physics")]
         [SerializeField] private float groundCheckRadius = 0.2f;
-        [SerializeField] private float interactCheckRadius = 0.3f;
 
         [Header(" - Movement")]
         [SerializeField] private float walkSpeed = 1f;
@@ -36,7 +35,6 @@ namespace CharacterXYZ.Data
         [Header(" - Visual")]
         [SerializeField] private float animationBlendDamp = 0.1f;
 
-        public float InteractCheckRadius => interactCheckRadius;
         public float GroundCheckRadius => groundCheckRadius;
         public float Mass => mass;
         public float Acceleration => acceleration;

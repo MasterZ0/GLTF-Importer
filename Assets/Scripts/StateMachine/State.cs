@@ -1,4 +1,4 @@
-﻿namespace CharacterXYZ.StateMachine
+﻿namespace GLTFImporter.StateMachine
 {
     public abstract class State
     {

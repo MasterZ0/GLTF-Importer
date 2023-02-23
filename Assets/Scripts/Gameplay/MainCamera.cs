@@ -1,7 +1,7 @@
-using CharacterXYZ.Shared;
+using GLTFImporter.Shared;
 using UnityEngine;
 
-namespace CharacterXYZ.Gameplay
+namespace GLTFImporter.Gameplay
 {
 
     public class MainCamera : Singleton<MainCamera>

@@ -2,7 +2,7 @@
 using UnityEngine;
 using CallbackContext = UnityEngine.InputSystem.InputAction.CallbackContext;
 
-namespace CharacterXYZ.Inputs
+namespace GLTFImporter.Inputs
 {
     public class PlayerInputs : BaseInput
     {

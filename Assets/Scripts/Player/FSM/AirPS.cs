@@ -1,6 +1,6 @@
-﻿using CharacterXYZ.Shared;
+﻿using GLTFImporter.Shared;
 
-namespace CharacterXYZ.Player.FSM
+namespace GLTFImporter.Player.FSM
 {
     public class AirPS : PlayerState
     {

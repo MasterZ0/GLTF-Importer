@@ -11,9 +11,9 @@ using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-using CharacterXYZ.GLTF;
+using GLTFImporter.Importer;
 
-namespace CharacterXYZ.Editor
+namespace GLTFImporter.Editor
 {
     public class GLTFAssetImporterEditorWindow : OdinEditorWindow
     {
@@ -27,7 +27,7 @@ namespace CharacterXYZ.Editor
             GenerateMipMaps = true,
         };
 
-        [MenuItem("Character XYZ/" + WindowName)]
+        [MenuItem("XYZ/" + WindowName)]
         public static void ShowWindow()
         {
             GetWindow<GLTFAssetImporterEditorWindow>(WindowName).Show();

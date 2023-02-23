@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace CharacterXYZ.Shared
+namespace GLTFImporter.Shared
 {
     public class Timer
     {

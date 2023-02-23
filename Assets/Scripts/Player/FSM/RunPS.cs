@@ -1,4 +1,4 @@
-﻿namespace CharacterXYZ.Player.FSM
+﻿namespace GLTFImporter.Player.FSM
 {
     public sealed class RunPS : StandingSPS
     {

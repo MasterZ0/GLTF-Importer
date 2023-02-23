@@ -1,4 +1,4 @@
-namespace CharacterXYZ.API
+namespace GLTFImporter.API
 {
     public enum HTTPVerb
     {

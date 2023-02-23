@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using UnityEngine.Networking;
 
-namespace CharacterXYZ.API
+namespace GLTFImporter.API
 {
     public class ApiResult
     {

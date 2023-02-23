@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-namespace CharacterXYZ.Player
+namespace GLTFImporter.Player
 {
     /// <summary>
     /// Handles player physics
@@ -14,12 +14,9 @@ namespace CharacterXYZ.Player
 
         [Header("Components")]
         [SerializeField] private CharacterController characterController;
-        [SerializeField] private CapsuleCollider bodyTrigger;
 
         [Header("Points")]
         [SerializeField] private Transform groundCheckPoint;
-        [SerializeField] private Transform interactableCheckPoint;
-        [SerializeField] private Transform standUpCheckPoint;
 
         public Vector3 Velocity => characterController.velocity;
         public Transform Transform => characterController.transform;
@@ -76,8 +73,6 @@ namespace CharacterXYZ.Player
         {
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(groundCheckPoint.position, Data.GroundCheckRadius);
-            Gizmos.DrawWireSphere(standUpCheckPoint.position, Data.GroundCheckRadius);
-            Gizmos.DrawWireSphere(interactableCheckPoint.position, Data.InteractCheckRadius);
         }
 
         #region Private Methods

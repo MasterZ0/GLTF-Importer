@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CharacterXYZ.Player
+namespace GLTFImporter.Player
 {
     [Serializable]
     public sealed class PlayerVFX : PlayerControllerComponent

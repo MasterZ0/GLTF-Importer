@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace CharacterXYZ.Inputs
+namespace GLTFImporter.Inputs
 {
     public partial class @Controls : IInputActionCollection2, IDisposable
     {
